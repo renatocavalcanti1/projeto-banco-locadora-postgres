@@ -1,9 +1,6 @@
 # Locadora de Jogos
 
 Este projeto é uma **base de dados para uma locadora de jogos**, contendo informações de atendentes, clientes, jogos e registros de aluguel.  
-O objetivo é servir como projeto de estudo ou teste para gerenciamento de locadora.
-
----
 
 ## Estrutura do Banco de Dados
 
@@ -14,78 +11,36 @@ O banco de dados possui as seguintes tabelas:
 - **Jogo**: contém detalhes dos jogos disponíveis para aluguel, incluindo o atendente que cadastrou o jogo.
 - **Aluguel**: registra os aluguéis realizados, relacionando clientes, jogos e atendentes.
 
-### Diagrama das Tabelas
-
-Atendente
-CPF (PK)
-Nome
-
-Cliente
-CPF (PK)
-Nome
-Telefone
-Endereço
-Email
-Atendente_CPF (FK -> Atendente.CPF)
-
-Jogo
-Código (PK)
-Nome
-Fabricante
-Número_Máximo_Jogadores
-Ano_Publicação
-Número_Cópias
-Atendente_CPF (FK -> Atendente.CPF)
-
-Aluguel
-ID (PK)
-Data_Aluguel
-Cliente_CPF (FK -> Cliente.CPF)
-Jogo_Código (FK -> Jogo.Código)
-Atendente_CPF (FK -> Atendente.CPF)
-
-yaml
-Copiar código
-
----
-
 ## Backup / Arquivo SQL
 
 O arquivo de backup está disponível em:  
-**`sql/LocadoraJogos.sql`** (formato plain SQL)  
+**`LocadoraJogos.sql`** (formato plain SQL)  
 
 ### Como restaurar
 
-#### PostgreSQL
+Se estiver usando PostgreSQL, por exemplo:
 
 ```bash
-# Crie o banco de dados
+-- Crie o banco de dados
 createdb locadora_jogos
 
-# Restaure o backup
-psql -d locadora_jogos -f sql/LocadoraJogos.sql
-MySQL
+-- Restaure o backup
+psql -d locadora_jogos -f LocadoraJogos.sql
+Se estiver usando MySQL:
+
 bash
 Copiar código
-# Crie o banco de dados
+-- Crie o banco de dados
 CREATE DATABASE locadora_jogos;
 
-# Restaure o backup
-mysql -u [usuario] -p locadora_jogos < sql/LocadoraJogos.sql
-Registros de Exemplo
-O backup contém registros de exemplo para testes, incluindo:
+-- Restaure o backup
+mysql -u [usuario] -p locadora_jogos < LocadoraJogos.sql
+Observações
+Todos os CPFs utilizados são fictícios e servem apenas para testes.
 
-3 atendentes
+O backup contém registros de exemplo para facilitar testes e desenvolvimento.
 
-3 clientes
-
-3 jogos
-
-3 aluguéis
-
-Todos os CPFs e dados são fictícios.
-
-Estrutura de Pastas Recomendada
+Estrutura de pastas sugerida
 pgsql
 Copiar código
 LocadoraJogos/
@@ -93,10 +48,4 @@ LocadoraJogos/
 ├─ sql/
 │  └─ LocadoraJogos.sql
 ├─ README.md
-Observações
-Ideal para estudo de SQL, relacionamentos e backup/restore de bancos de dados.
-
-Pode ser expandido para adicionar novas funcionalidades, como controle de estoque ou relatórios de aluguel.
-
 Desenvolvido como projeto de estudo/teste para gerenciamento de locadora de jogos.
-
