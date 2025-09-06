@@ -1,51 +1,84 @@
-# Locadora de Jogos
+Projeto de Banco de Dados - Locadora de Jogos (PostgreSQL)
 
-Este projeto é uma **base de dados para uma locadora de jogos**, contendo informações de atendentes, clientes, jogos e registros de aluguel.  
+Este repositório contém a modelagem e implementação de um banco de dados para uma locadora de jogos, desenvolvido em PostgreSQL. Inclui tabelas, chaves primárias e estrangeiras, além de registros de exemplo.
 
-## Estrutura do Banco de Dados
+Estrutura do Banco
+Tabelas principais
 
-O banco de dados possui as seguintes tabelas:
+atendente
 
-- **Atendente**: armazena os dados dos atendentes da locadora.
-- **Cliente**: armazena informações dos clientes, incluindo o atendente responsável.
-- **Jogo**: contém detalhes dos jogos disponíveis para aluguel, incluindo o atendente que cadastrou o jogo.
-- **Aluguel**: registra os aluguéis realizados, relacionando clientes, jogos e atendentes.
+cpf (PK)
 
-## Backup / Arquivo SQL
+nome
 
-O arquivo de backup está disponível em:  
-**`LocadoraJogos.sql`** (formato plain SQL)  
+cliente
 
-### Como restaurar
+cpf (PK)
 
-Se estiver usando PostgreSQL, por exemplo:
+nome
 
-```bash
--- Crie o banco de dados
-createdb locadora_jogos
+telefone
 
--- Restaure o backup
-psql -d locadora_jogos -f LocadoraJogos.sql
-Se estiver usando MySQL:
+endereço
 
-bash
-Copiar código
--- Crie o banco de dados
-CREATE DATABASE locadora_jogos;
+email
 
--- Restaure o backup
-mysql -u [usuario] -p locadora_jogos < LocadoraJogos.sql
-Observações
-Todos os CPFs utilizados são fictícios e servem apenas para testes.
+atendente_cpf (FK → atendente)
 
-O backup contém registros de exemplo para facilitar testes e desenvolvimento.
+jogo
 
-Estrutura de pastas sugerida
-pgsql
-Copiar código
-LocadoraJogos/
-│
-├─ sql/
-│  └─ LocadoraJogos.sql
-├─ README.md
-Desenvolvido como projeto de estudo/teste para gerenciamento de locadora de jogos.
+código (PK)
+
+nome
+
+fabricante
+
+número_máximo_jogadores
+
+ano_publicação
+
+número_cópias
+
+atendente_cpf (FK → atendente)
+
+aluguel
+
+id (PK)
+
+data_aluguel
+
+cliente_cpf (FK → cliente)
+
+jogo_código (FK → jogo)
+
+atendente_cpf (FK → atendente)
+
+Exemplo de Dados
+
+Atendentes:
+
+Ana Silva
+
+Bruno Souza
+
+Carlos Lima
+
+Clientes:
+
+Daniela Costa
+
+Eduardo Pereira
+
+Fernanda Rocha
+
+Jogos:
+
+Banco Imobiliário
+
+War
+
+Uno
+
+Aluguéis:
+
+Relacionam clientes com jogos em datas específicas, com registro do atendente responsável.
