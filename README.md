@@ -1,6 +1,6 @@
 # Projeto de Banco de Dados de Aluguel de Jogos
 
-Este projeto é um banco de dados PostgreSQL para gerenciar o **aluguel de jogos**, clientes e atendentes de uma locadora. Ele possui quatro tabelas principais: `aluguel`, `cliente`, `atendente` e `jogo`.
+Este projeto é um banco de dados SQL para gerenciar o **aluguel de jogos**, clientes e atendentes de uma locadora. Ele possui quatro tabelas principais: `aluguel`, `cliente`, `atendente` e `jogo`.
 
 ---
 
@@ -109,3 +109,4 @@ Registra cada aluguel realizado pelos clientes.
 1. Crie o banco de dados no PostgreSQL.
 2. Execute o script SQL para criar as tabelas e inserir os dados de exemplo.
 3. Use consultas SQL para consultar aluguéis, clientes, jogos e atendentes.
+
