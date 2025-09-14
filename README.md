@@ -4,6 +4,9 @@ Este projeto é um banco de dados SQL para gerenciar o **aluguel de jogos**, cli
 
 ---
 
+![Modelo lógico](./modelo logico.png)
+
+
 ## Estrutura das Tabelas
 
 ### 1. Tabela `atendente`
@@ -109,4 +112,5 @@ Registra cada aluguel realizado pelos clientes.
 1. Crie o banco de dados no PostgreSQL.
 2. Execute o script SQL para criar as tabelas e inserir os dados de exemplo.
 3. Use consultas SQL para consultar aluguéis, clientes, jogos e atendentes.
+
 
